@@ -1,0 +1,14 @@
+<template>
+	<lightning-checkbox-group
+		class=""
+		label="Select Target Time"
+		options={options}
+		value={selectedTarget}
+		disabled={pomodoroStarted}
+		required
+	></lightning-checkbox-group>
+	<lightning-combobox
+		options={tasks}
+	></lightning-combobox>
+	<lightning-button label="Create Task" onkeypress={navigateToCreateTask}></lightning-button>
+</template>
