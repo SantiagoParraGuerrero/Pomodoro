@@ -4,11 +4,12 @@
 		label="Select Target Time"
 		options={options}
 		value={selectedTarget}
+        onchange={handleChange}
 		disabled={pomodoroStarted}
 		required
 	></lightning-checkbox-group>
-	<lightning-combobox
+	<!-- <lightning-combobox
 		options={tasks}
 	></lightning-combobox>
-	<lightning-button label="Create Task" onkeypress={navigateToCreateTask}></lightning-button>
+	<lightning-button label="Create Task" onkeypress={navigateToCreateTask}></lightning-button> -->
 </template>
