@@ -1,7 +1,12 @@
 import { LightningElement, wire } from 'lwc';
 import getTasks from '@salesforce/apex/PomodoroController.getTasks';
 
+const DEFAULT_TARGET = 30;
+
 export default class PomodoroStart extends LightningElement {
+
+    selectedTarget = [ DEFAULT_TARGET ];
+
 	get options() {
 		return [
 			{ label: '5', value: 5 },
@@ -27,7 +32,7 @@ export default class PomodoroStart extends LightningElement {
 	wiredTask
 
 	get tasks() {
-		if (!this.wiredTask.data?.length) return []
+		if (!this.wiredTask?.data?.length) return []
 
 		return this.wiredTask.data.map(task => ({ label : task.Name, value: task.Id }))
 	}
