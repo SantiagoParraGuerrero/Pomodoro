@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PomodoroTask__c</fullName>
+    <externalId>false</externalId>
+    <label>Pomodoro Task</label>
+    <referenceTo>PomodorTask__c</referenceTo>
+    <relationshipLabel>Pomodoros</relationshipLabel>
+    <relationshipName>Pomodoros</relationshipName>
+    <relationshipOrder>0</relationshipOrder>
+    <reparentableMasterDetail>true</reparentableMasterDetail>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>false</writeRequiresMasterRead>
+</CustomField>
