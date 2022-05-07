@@ -3,7 +3,7 @@
     <fullName>PomodoroTask__c</fullName>
     <externalId>false</externalId>
     <label>Pomodoro Task</label>
-    <referenceTo>PomodorTask__c</referenceTo>
+    <referenceTo>PomodoroTask__c</referenceTo>
     <relationshipLabel>Pomodoros</relationshipLabel>
     <relationshipName>Pomodoros</relationshipName>
     <relationshipOrder>0</relationshipOrder>
