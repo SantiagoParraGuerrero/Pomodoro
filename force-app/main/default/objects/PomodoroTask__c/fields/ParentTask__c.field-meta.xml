@@ -4,7 +4,7 @@
     <deleteConstraint>SetNull</deleteConstraint>
     <externalId>false</externalId>
     <label>Parent Task</label>
-    <referenceTo>PomodorTask__c</referenceTo>
+    <referenceTo>PomodoroTask__c</referenceTo>
     <relationshipLabel>SubTasks</relationshipLabel>
     <relationshipName>SubTasks</relationshipName>
     <required>false</required>

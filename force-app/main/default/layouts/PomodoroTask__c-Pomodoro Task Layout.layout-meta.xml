@@ -57,7 +57,7 @@
     </layoutSections>
     <relatedLists>
         <fields>NAME</fields>
-        <relatedList>PomodorTask__c.ParentTask__c</relatedList>
+        <relatedList>PomodoroTask__c.ParentTask__c</relatedList>
     </relatedLists>
     <relatedLists>
         <fields>NAME</fields>
