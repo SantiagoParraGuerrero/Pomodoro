@@ -1,0 +1,28 @@
+<template>
+    hoola amigos
+    <lightning-layout>
+        <template if:true={tasks} for:each={tasks} for:item="task">
+            <lightning-layout-item key={task.Id}>
+                <lightning-layout-item>
+                    <div class="slds-box task">
+                        {task.Name}
+                        {task.Description__c}
+                    </div>
+                    <lightning-button-icon if:true={task.isLast} icon-name="utility:add"></lightning-button-icon>
+                </lightning-layout-item>
+                <lightning-layout-item>
+                    <template if:true={task.childTasks} for:each={task.childTasks} for:item="childTask">
+                        <lightning-layout-item key={childTask}>
+                            {childTask.Name}
+                            {childTask.Description__c}
+                            <lightning-button-icon if:true={childTask.isLast} icon-name="utility:add"></lightning-button-icon>
+                        </lightning-layout-item>
+                    </template>
+                </lightning-layout-item>
+            </lightning-layout-item>
+        </template>
+    </lightning-layout>
+    <template if:false={tasks}>
+        <lightning-button icon-name="utility:add" label="Add" title="Add" onclick={createTask}></lightning-button>
+    </template>
+</template>

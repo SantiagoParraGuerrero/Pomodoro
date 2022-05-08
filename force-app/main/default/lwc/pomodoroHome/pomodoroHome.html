@@ -1,11 +1,13 @@
 <template>
-    <lightning-tabset variant="scoped" active-tab-value={activeTabValue}>
-        <lightning-tab label="monthlySummary">
+    <lightning-tabset variant="scoped" active-tab-value={activeTabValue} >
+        <lightning-tab onactive={handleActive} label="monthlySummary">
 
         </lightning-tab>
-        <lightning-tab label="PomodoroSummary" value="pomodoro">
-            <c-pomodoro-start opencreatetasktab={openCreateTaskTab}></c-pomodoro-start>
+        <lightning-tab onactive={handleActive} label="PomodoroSummary" value="pomodoro">
+            <c-pomodoro-start onopencreatetasktab={openCreateTaskTab}></c-pomodoro-start>
         </lightning-tab>
-        <lightning-tab label="createTask" value="createTask"></lightning-tab>
+        <lightning-tab onactive={handleActive} label="createTask" value="createTask">
+            <c-create-pomodoro-task></c-create-pomodoro-task>
+        </lightning-tab>
     </lightning-tabset>
 </template>
