@@ -12,7 +12,12 @@
     <isNavPersonalizationDisabled>true</isNavPersonalizationDisabled>
     <label>Pomodoro</label>
     <navType>Console</navType>
+    <tabs>Pomodoro</tabs>
     <uiType>Lightning</uiType>
     <utilityBar>Pomodoro_UtilityBar</utilityBar>
-    <workspaceConfig/>
+    <workspaceConfig>
+        <mappings>
+            <tab>Pomodoro</tab>
+        </mappings>
+    </workspaceConfig>
 </CustomApplication>
