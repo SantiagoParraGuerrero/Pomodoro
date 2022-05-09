@@ -1,20 +1,30 @@
 <template>
-	<lightning-checkbox-group
-		class=""
-		label="Select Target Time"
-		options={options}
-		value={selectedTarget}
-        onchange={handleChange}
-		disabled={pomodoroStarted}
-		required
-	></lightning-checkbox-group>
+    <lightning-combobox
+        label="Target Time"
+        options={options}
+        value={selectedTarget}
+        required
+    ></lightning-combobox>
 	<lightning-combobox
         if:true={tasks.length}
 		options={tasks}
 	></lightning-combobox>
-	<lightning-button
-        label="Create Task"
-        onclick={openCreateTaskTab}
-        onkeypress={openCreateTaskTab}
+    <lightning-button
+        label="Start"
+        onclick={startCounting}
+        onkeypress={startCounting}
     ></lightning-button>
+    <lightning-button
+        label="Reset"
+        onclick={stopCount}
+        onkeypress={stopCount}
+    ></lightning-button>
+    <lightning-button-stateful
+        icon-name-when-off="utility:pause"
+        icon-name-when-on="utility:play"
+        selected={pause}
+        onclick={pauseStop}
+        onkeypress={pauseStop}
+    ></lightning-button-stateful>
+    {displayValue}
 </template>

@@ -1,11 +1,18 @@
-import { LightningElement, wire } from 'lwc';
-import getTasks from '@salesforce/apex/PomodoroController.getTasks';
+import { LightningElement, wire } from 'lwc'
+import getTasks from '@salesforce/apex/PomodoroController.getTasks'
 
-const DEFAULT_TARGET = '30';
+const DEFAULT_TARGET = '30'
+const SECOND = 1000
+const MINUTE = 60000
+const DEFAULT_START = + DEFAULT_TARGET * MINUTE
 
 export default class PomodoroStart extends LightningElement {
 
-    selectedTarget = [ DEFAULT_TARGET ];
+    selectedTarget = DEFAULT_TARGET
+
+    counter = DEFAULT_START
+
+    displayValue = this.millisToMinutesAndSeconds(this.counter)
 
 	get options() {
 		return [
@@ -24,10 +31,6 @@ export default class PomodoroStart extends LightningElement {
 		]
 	}
 
-	openCreateTaskTab() {
-		this.dispatchEvent(new CustomEvent('opencreatetasktab'))
-	}
-
 	@wire(getTasks)
 	wiredTask
 
@@ -39,5 +42,36 @@ export default class PomodoroStart extends LightningElement {
 
     handleChange(e) {
         this.selectedTarget = e.detail.value
+    }
+
+    startCounting() {
+        this.count()
+    }
+
+    count() {
+        this.countDown = setInterval(() => {
+            this.counter -= SECOND
+            this.displayValue = this.millisToMinutesAndSeconds(this.counter)
+        }, SECOND)
+    }
+
+    stopCount() {
+        this.counter = DEFAULT_START
+        this.displayValue = this.millisToMinutesAndSeconds(this.counter)
+        clearInterval(this.countDown)
+    }
+
+    pause
+
+    pauseStop() {
+        this.pause = !this.pause
+
+        this.pause ? clearInterval(this.countDown) : this.count()
+    }
+
+    millisToMinutesAndSeconds(counter) {
+        const minutes = Math.floor(counter / MINUTE)
+        const seconds = ((counter % MINUTE) / SECOND).toFixed(0)
+        return minutes + ":" + (seconds < 10 ? '0' : '') + seconds
     }
 }

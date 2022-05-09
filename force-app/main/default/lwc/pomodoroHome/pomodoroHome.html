@@ -1,7 +1,6 @@
 <template>
     <lightning-tabset variant="scoped" active-tab-value={activeTabValue} >
         <lightning-tab onactive={handleActive} label="monthlySummary">
-
         </lightning-tab>
         <lightning-tab onactive={handleActive} label="PomodoroSummary" value="pomodoro">
             <c-pomodoro-start onopencreatetasktab={openCreateTaskTab}></c-pomodoro-start>

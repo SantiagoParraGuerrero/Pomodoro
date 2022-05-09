@@ -1,28 +1,25 @@
 <template>
-    hoola amigos
-    <lightning-layout>
-        <template if:true={tasks} for:each={tasks} for:item="task">
-            <lightning-layout-item key={task.Id}>
-                <lightning-layout-item>
-                    <div class="slds-box task">
+    <div class="slds-box slds-p-around_none slds-m-top_x-small slds-m-bottom_medium slds-m-horizontal_none">
+        <lightning-layout multiple-rows>
+            <template if:true={tasks} for:each={tasks} for:item='task'>
+                <lightning-layout-item key={task.Id} flexibility="auto" padding="around-small" size="6">
+                    <div class="custom-box slds-box slds-var-p-around_medium slds-text-align_center task">
                         {task.Name}
-                        {task.Description__c}
+                        {task.isLast}
+                        <lightning-button-icon if:true={task.isLast} icon-name='utility:add' onclick={createTask}></lightning-button-icon>
                     </div>
-                    <lightning-button-icon if:true={task.isLast} icon-name="utility:add"></lightning-button-icon>
                 </lightning-layout-item>
-                <lightning-layout-item>
-                    <template if:true={task.childTasks} for:each={task.childTasks} for:item="childTask">
-                        <lightning-layout-item key={childTask}>
-                            {childTask.Name}
-                            {childTask.Description__c}
-                            <lightning-button-icon if:true={childTask.isLast} icon-name="utility:add"></lightning-button-icon>
+                <lightning-layout-item key={task.Id} flexibility="auto" padding="around-small" size="6">
+                    <template for:each={task.childTasks} for:item='childTask'>
+                        <lightning-layout-item key={childTask.Id} flexibility="auto">
+                            <div class="custom-box slds-box slds-var-p-around_medium slds-text-align_center new-task">
+                                <lightning-button-icon data-parent-task-id={task.Id} if:true={childTask.isLast} onclick={createTask} icon-name='utility:add'></lightning-button-icon>
+                            </div>
                         </lightning-layout-item>
                     </template>
+                    <lightning-input></lightning-input>
                 </lightning-layout-item>
-            </lightning-layout-item>
-        </template>
-    </lightning-layout>
-    <template if:false={tasks}>
-        <lightning-button icon-name="utility:add" label="Add" title="Add" onclick={createTask}></lightning-button>
-    </template>
+            </template>
+        </lightning-layout>
+    </div>
 </template>
