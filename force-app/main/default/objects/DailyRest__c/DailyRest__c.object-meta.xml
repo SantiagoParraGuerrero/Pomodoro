@@ -149,17 +149,18 @@
     <enableHistory>false</enableHistory>
     <enableLicensing>false</enableLicensing>
     <enableReports>false</enableReports>
-    <enableSearch>true</enableSearch>
+    <enableSearch>false</enableSearch>
     <enableSharing>true</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
-    <externalSharingModel>ControlledByParent</externalSharingModel>
-    <label>Pomodoro Task</label>
+    <externalSharingModel>Private</externalSharingModel>
+    <label>DailyRest</label>
     <nameField>
-        <label>Pomodoro Task Name</label>
-        <type>Text</type>
+        <displayFormat>DR # {000000}</displayFormat>
+        <label>DailyRest Name</label>
+        <type>AutoNumber</type>
     </nameField>
-    <pluralLabel>Pomodoro Task</pluralLabel>
+    <pluralLabel>Daily Rests</pluralLabel>
     <searchLayouts></searchLayouts>
-    <sharingModel>ControlledByParent</sharingModel>
+    <sharingModel>ReadWrite</sharingModel>
     <visibility>Public</visibility>
 </CustomObject>

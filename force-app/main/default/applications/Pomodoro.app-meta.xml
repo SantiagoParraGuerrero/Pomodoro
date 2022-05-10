@@ -13,11 +13,23 @@
     <label>Pomodoro</label>
     <navType>Console</navType>
     <tabs>Pomodoro</tabs>
+    <tabs>Pomodoro__c</tabs>
+    <tabs>PomodoroTask__c</tabs>
+    <tabs>Project__c</tabs>
     <uiType>Lightning</uiType>
     <utilityBar>Pomodoro_UtilityBar</utilityBar>
     <workspaceConfig>
         <mappings>
             <tab>Pomodoro</tab>
+        </mappings>
+        <mappings>
+            <tab>PomodoroTask__c</tab>
+        </mappings>
+        <mappings>
+            <tab>Pomodoro__c</tab>
+        </mappings>
+        <mappings>
+            <tab>Project__c</tab>
         </mappings>
     </workspaceConfig>
 </CustomApplication>

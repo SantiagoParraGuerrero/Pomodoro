@@ -5,4 +5,34 @@
 
 SELECT Id, Name FROM Account
 
-SELECT Id, ParentTask__c FROM PomodoroTask__c
+SELECT Id, Name, PomodoroTask__r.Name ,PomodoroTask__r.Project__r.Name, TimeRecorded__c, EndDate__c FROM Pomodoro__c
+
+SELECT PomodoroTask__c, AVG(TimeRecorded__c) FROM Pomodoro__c GROUP BY PomodoroTask__c
+Select HOUR_IN_DAY(convertTimezone(EndDate__c)) From Pomodoro__c group by HOUR_IN_DAY(convertTimezone(EndDate__c))
+Select HOUR_IN_DAY(convertTimezone(EndDate__c)) From Pomodoro__c group by HOUR_IN_DAY(convertTimezone(EndDate__c))
+
+
+
+
+as a user i want to know
+    my overall average (AVR(TimeRecorded__c))
+    show my current progress
+        based on how much my currentProgress is impacting the overall average
+            -RED when -20%
+            -Yellow when -5%
+            -Gray when +5%
+            -Green when +10%
+
+    my overall average daily average on a graph / sum(TimeRecorded__c) daily
+        -last 10 days
+        -last 30 days
+        -last 3 months
+        -last 6 months
+        -last year
+    single task graph
+        -last 10 days
+        -last 30 days
+        -last 3 months
+        -last 6 months
+        -last year
+    this month task distribution

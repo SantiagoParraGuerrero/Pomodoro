@@ -3,11 +3,15 @@
         label="Target Time"
         options={options}
         value={selectedTarget}
+        onchange={handleChange}
         required
     ></lightning-combobox>
 	<lightning-combobox
+        label="Asociated Task"
         if:true={tasks.length}
 		options={tasks}
+        onchange={handleTaskChange}
+        required
 	></lightning-combobox>
     <lightning-button
         label="Start"
