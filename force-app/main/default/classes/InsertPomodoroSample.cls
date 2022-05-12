@@ -41,7 +41,7 @@ public with sharing class InsertPomodoroSample
     private static final Integer MAX_TIME_RECORDED = 60;
     private static final Integer MIN_TIME_RECORDED = 20;
 
-    private static final Integer MAX_NUMBER_POMOS = 10;
+    private static final Integer MAX_NUMBER_POMOS = 12;
     private static final Integer MIN_NUMBER_POMOS = 0;
 
     private static final Integer SAMPLE_DAYS = 365;
@@ -89,20 +89,19 @@ public with sharing class InsertPomodoroSample
         DateTime dt = System.now();
         DateTime now = DateTime.newInstance(dt.year(), dt.month(), dt.day());
         for(Integer currentDay = 0; currentDay < SAMPLE_DAYS; currentDay++) {//each day
-            Integer numberOfPomosEachDay = generateRandomNumberBetween(MIN_NUMBER_POMOS, MAX_NUMBER_POMOS);
+            // Integer numberOfPomosEachDay = generateRandomNumberBetween(MIN_NUMBER_POMOS, MAX_NUMBER_POMOS);
             Integer totalRestTime = LUNCH_TIME;
             DateTime today = now.addDays(-currentDay);
             
             for (Integer currentHour = 0; currentHour < WORKING_HOURS_EACH_DAY; currentHour++) {
                 Double randomNumber = Math.random();
                 Integer pomodoroTime = getPomodoroTime(randomNumber);
-                Integer restTime = randomNumber < 0.25 ? 15 : 5;
+                // numberOfPomosEachDay--;
                 
+                // if (numberOfPomosEachDay == 0) break;
                 if (pomodoroTime == 0) continue;
 
-                numberOfPomosEachDay--;
-
-                if (numberOfPomosEachDay == 0) break;
+                Integer restTime = randomNumber < 0.25 ? 15 : 5;
     
                 PomodoroTask__c pomodoroTask = (PomodoroTask__c) getRandomElement(randomNumber, pomodoroTasks);
     
@@ -140,13 +139,13 @@ public with sharing class InsertPomodoroSample
     private static Integer getPomodoroTime(Double randomNumber) {
         Integer result = 0;
 
-        if (randomNumber < 0.6) {// 60% change of creating a pomo of 25
+        if (randomNumber < 0.5) {// 60% change of creating a pomo of 25
             result = 25;
-        } else if (randomNumber < 0.75) {//15% change of creating a pomo of 30
+        } else if (randomNumber < 0.65) {//15% change of creating a pomo of 30
             result = 30;
-        } else if (randomNumber < 0.85) {//10% chance of creating a pomo of 20
+        } else if (randomNumber < 0.75) {//10% chance of creating a pomo of 20
             result = 20;
-        } else if (randomNumber < 0.9) {//5% change of creating a pomo of 30
+        } else if (randomNumber < 0.8) {//5% change of creating a pomo of 30
             result = 35;
         }
 
