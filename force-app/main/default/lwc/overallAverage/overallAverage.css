@@ -1,0 +1,5 @@
+.container {
+    background: var(--lwc-brandAccessible);
+    border-radius: var(--lwc-borderRadiusLarge);
+    font-family: var(--lwc-fontFamily);
+}

@@ -8,7 +8,8 @@ SELECT Id, Name FROM Account
 SELECT Id, Name, PomodoroTask__r.Name ,PomodoroTask__r.Project__r.Name, TimeRecorded__c, EndDate__c FROM Pomodoro__c
 
 SELECT PomodoroTask__c, AVG(TimeRecorded__c) FROM Pomodoro__c GROUP BY PomodoroTask__c
-Select HOUR_IN_DAY(convertTimezone(EndDate__c)) From Pomodoro__c group by HOUR_IN_DAY(convertTimezone(EndDate__c))
+Select AVG(TimeRecorded__c) FROM Pomodoro__c
+Select DAY_IN_YEAR(EndDate__c), SUM(TimeRecorded__c) FROM Pomodoro__c group by DAY_IN_YEAR(EndDate__c)
 Select HOUR_IN_DAY(convertTimezone(EndDate__c)) From Pomodoro__c group by HOUR_IN_DAY(convertTimezone(EndDate__c))
 
 
