@@ -1,0 +1,34 @@
+<template>
+    <lightning-combobox
+        label="Target Time"
+        options={options}
+        value={selectedTarget}
+        onchange={handleChange}
+        required
+    ></lightning-combobox>
+	<lightning-combobox
+        label="Asociated Task"
+        if:true={tasks.length}
+		options={tasks}
+        onchange={handleTaskChange}
+        required
+	></lightning-combobox>
+    <lightning-button
+        label="Start"
+        onclick={startCounting}
+        onkeypress={startCounting}
+    ></lightning-button>
+    <lightning-button
+        label="Reset"
+        onclick={stopCount}
+        onkeypress={stopCount}
+    ></lightning-button>
+    <lightning-button-stateful
+        icon-name-when-off="utility:pause"
+        icon-name-when-on="utility:play"
+        selected={pause}
+        onclick={pauseStop}
+        onkeypress={pauseStop}
+    ></lightning-button-stateful>
+    {displayValue}
+</template>

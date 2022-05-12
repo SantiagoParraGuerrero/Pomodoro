@@ -5,6 +5,15 @@
 // You can also execute the entire file by running the command:
 //     SFDX: Execute Anonymous Apex with Editor Contents
 
-string tempvar = 'Enter_your_name_here';
-System.debug('Hello World!');
-System.debug('My name is ' + tempvar);
+InsertPomodoroSample.createData();
+
+
+delete [select id from Pomodoro__c];
+delete [select id from PomodoroTask__c];
+delete [select id from Project__c];
+delete [SELECT Id FROM DailyRest__c];
+
+
+System.debug(system.today().addDays(1));
+
+System.debug(InsertPomodoroSample.insertTwelve());

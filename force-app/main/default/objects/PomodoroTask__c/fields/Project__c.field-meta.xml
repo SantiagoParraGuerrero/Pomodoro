@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>PomodoroTask__c</fullName>
+    <fullName>Project__c</fullName>
     <externalId>false</externalId>
-    <label>Pomodoro Task</label>
-    <referenceTo>PomodoroTask__c</referenceTo>
-    <relationshipLabel>Pomodoros</relationshipLabel>
-    <relationshipName>Pomodoros</relationshipName>
+    <label>Project</label>
+    <referenceTo>Project__c</referenceTo>
+    <relationshipLabel>Pomodoro Tasks</relationshipLabel>
+    <relationshipName>PomodoroTasks</relationshipName>
     <relationshipOrder>0</relationshipOrder>
     <reparentableMasterDetail>true</reparentableMasterDetail>
     <trackTrending>false</trackTrending>

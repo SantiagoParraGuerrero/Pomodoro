@@ -149,16 +149,16 @@
     <enableHistory>false</enableHistory>
     <enableLicensing>false</enableLicensing>
     <enableReports>false</enableReports>
-    <enableSearch>false</enableSearch>
+    <enableSearch>true</enableSearch>
     <enableSharing>true</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
     <externalSharingModel>Private</externalSharingModel>
-    <label>Pomodoro Task</label>
+    <label>Project</label>
     <nameField>
-        <label>Pomodoro Task Name</label>
+        <label>Project Name</label>
         <type>Text</type>
     </nameField>
-    <pluralLabel>Pomodoro Task</pluralLabel>
+    <pluralLabel>Projects</pluralLabel>
     <searchLayouts></searchLayouts>
     <sharingModel>ReadWrite</sharingModel>
     <visibility>Public</visibility>
