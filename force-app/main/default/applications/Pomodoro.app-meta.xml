@@ -12,6 +12,7 @@
     <isNavPersonalizationDisabled>true</isNavPersonalizationDisabled>
     <label>Pomodoro</label>
     <navType>Console</navType>
+    <tabs>PomodoroHomePageSecond</tabs>
     <tabs>Pomodoro</tabs>
     <tabs>Pomodoro__c</tabs>
     <tabs>PomodoroTask__c</tabs>
@@ -21,6 +22,9 @@
     <workspaceConfig>
         <mappings>
             <tab>Pomodoro</tab>
+        </mappings>
+        <mappings>
+            <tab>PomodoroHomePageSecond</tab>
         </mappings>
         <mappings>
             <tab>PomodoroTask__c</tab>

@@ -6,7 +6,15 @@
         <visible>true</visible>
     </applicationVisibilities>
     <classAccesses>
+        <apexClass>DailyAveragePomodoroGraphController</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>InsertPomodoroSample</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>OverallAverageController</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
@@ -79,6 +87,10 @@
     </objectPermissions>
     <tabVisibilities>
         <tab>Pomodoro</tab>
+        <visibility>DefaultOn</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
+        <tab>PomodoroHomePageSecond</tab>
         <visibility>DefaultOn</visibility>
     </tabVisibilities>
     <tabVisibilities>

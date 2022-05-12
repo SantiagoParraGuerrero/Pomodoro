@@ -17,3 +17,11 @@ delete [SELECT Id FROM DailyRest__c];
 System.debug(system.today().addDays(1));
 
 System.debug(InsertPomodoroSample.insertTwelve());
+
+
+System.debug(new PomodoroController.PomodoroDataWrapper(15));
+
+System.debug(DateTime.newInstance(14818356));
+
+Long milliseconds = (14818356.164383561643835616438356180000).longValue();
+System.debug(DateTime.newInstance(milliseconds));

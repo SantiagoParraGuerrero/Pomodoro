@@ -13,7 +13,12 @@ Select DAY_IN_YEAR(EndDate__c), SUM(TimeRecorded__c) FROM Pomodoro__c group by D
 Select HOUR_IN_DAY(convertTimezone(EndDate__c)) From Pomodoro__c group by HOUR_IN_DAY(convertTimezone(EndDate__c))
 
 
-
+SELECT  
+                DAY_IN_YEAR(EndDate__c) day , 
+                SUM(TimeRecorded__c) dailySum  
+            FROM Pomodoro__c  
+            WHERE EndDate__c = LAST_N_DAYS: 100    
+            GROUP BY DAY_IN_YEAR(EndDate__c) 
 
 as a user i want to know
     my overall average (AVR(TimeRecorded__c))

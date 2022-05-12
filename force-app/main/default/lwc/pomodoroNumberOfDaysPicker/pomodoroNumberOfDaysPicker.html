@@ -1,0 +1,16 @@
+<template>
+    <lightning-card class="slds-text-align_center" title="Number Of Days">
+        <div class="slds-align_absolute-center">
+            <lightning-slider
+                variant="label-hidden"
+                label="NumberOfDays"
+                size="large"
+                value={numberOfDays}
+                min={minNumberOfDays}
+                max={maxNumberOfDays}
+                step="5"
+                onchange={handleNumberOfDaysChange}>
+            </lightning-slider>
+        </div>
+    </lightning-card>
+</template>
